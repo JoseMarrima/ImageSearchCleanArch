@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/androidprojects/PixabayClean/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="app/src/main/res/drawable/bg_rounded_corners.xml" value="0.35137895812053116" />
+        <entry key="app/src/main/res/drawable/ic_comment.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/drawable/ic_download.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/drawable/ic_like.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout-land/image_details_fragment.xml" value="0.26480836236933797" />
+        <entry key="app/src/main/res/layout-land/item_list_image.xml" value="0.335" />
+        <entry key="app/src/main/res/layout-land/item_list_photo.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-land/photo_detail_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-land/photo_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-land/search_image_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/image_details_fragment.xml" value="0.3512064343163539" />
+        <entry key="app/src/main/res/layout/item_list_image.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/item_list_photo.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/search_image_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/search_menu.xml" value="0.375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.pixabayclean.ui.image_details.ImageDetailsViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        tools:context=".ui.image_details.ImageDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/large_image_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_rounded_corners"
+                android:contentDescription="@string/photo"
+                android:scaleType="fitXY"
+                app:imageUrl="@{viewmodel.image.largeImageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/user_name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/asap"
+                android:text="@{viewmodel.image.userName}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/large_image_view"
+                tools:text="@tools:sample/lorem" />
+
+            <ImageView
+                android:id="@+id/likes_image_view"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/likes_icon"
+                android:src="@drawable/ic_like"
+                app:layout_constraintEnd_toStartOf="@+id/downloads_image_view"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_name_text_view"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/downloads_image_view"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/downloads_icon"
+                android:src="@drawable/ic_download"
+                app:layout_constraintBottom_toBottomOf="@+id/likes_image_view"
+                app:layout_constraintEnd_toStartOf="@+id/comments_image_view"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/likes_image_view"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/comments_image_view"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/comments_icon"
+                android:src="@drawable/ic_comment"
+                app:layout_constraintBottom_toBottomOf="@+id/downloads_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/downloads_image_view"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/likes_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/asap"
+                android:text="@{String.valueOf(viewmodel.image.numberOfLikes)}"
+                android:textColor="@color/blue_400"
+                app:layout_constraintEnd_toEndOf="@+id/likes_image_view"
+                app:layout_constraintStart_toStartOf="@+id/likes_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/likes_image_view"
+                tools:text="172" />
+
+            <TextView
+                android:id="@+id/downloads_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/asap"
+                android:text="@{String.valueOf(viewmodel.image.numberOfDownload)}"
+                android:textColor="@color/blue_400"
+                app:layout_constraintEnd_toEndOf="@+id/downloads_image_view"
+                app:layout_constraintStart_toStartOf="@+id/downloads_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/downloads_image_view"
+                tools:text="100" />
+
+            <TextView
+                android:id="@+id/comments_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/asap"
+                android:text="@{String.valueOf(viewmodel.image.numberOfComments)}"
+                android:textColor="@color/blue_400"
+                app:layout_constraintEnd_toEndOf="@+id/comments_image_view"
+                app:layout_constraintStart_toStartOf="@+id/comments_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/comments_image_view"
+                tools:text="53" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/tags_chip_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/user_name_text_view"
+                app:layout_constraintStart_toStartOf="@+id/user_name_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/downloads_label_text_view">
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/likes_label_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/asap"
+                android:text="@string/likes"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/downloads_label_text_view"
+                app:layout_constraintEnd_toEndOf="@+id/likes_text_view"
+                app:layout_constraintStart_toStartOf="@+id/likes_text_view" />
+
+            <TextView
+                android:id="@+id/downloads_label_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/asap"
+                android:text="@string/downloads"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/downloads_text_view"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="@+id/downloads_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/downloads_text_view" />
+
+            <TextView
+                android:id="@+id/comments_label_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/asap"
+                android:text="@string/comments"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/downloads_label_text_view"
+                app:layout_constraintEnd_toEndOf="@+id/comments_text_view"
+                app:layout_constraintHorizontal_bias="0.333"
+                app:layout_constraintStart_toStartOf="@+id/comments_text_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

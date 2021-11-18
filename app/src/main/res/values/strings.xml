@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PixabayClean</string>
+    <string name="photo_thumbnail">Photo thumbnail</string>
+    <string name="photo">Photo</string>
+    <string name="likes_icon">Likes icon</string>
+    <string name="downloads_icon">Downloads icon</string>
+    <string name="comments_icon">Comments icon</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="search">Search images</string>
+    <string name="comments">Comments</string>
+    <string name="likes">Likes</string>
+    <string name="downloads">Downloads</string>
+</resources>

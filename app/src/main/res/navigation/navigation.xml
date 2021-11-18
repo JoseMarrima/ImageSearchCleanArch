@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/searchImageFragment">
+
+    <fragment
+        android:id="@+id/searchImageFragment"
+        android:name="com.example.pixabayclean.ui.search_images.SearchImageFragment"
+        android:label="Payback"
+        tools:layout="@layout/search_image_fragment" >
+        <action
+            android:id="@+id/action_searchImageFragment_to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDetailsFragment"
+        android:name="com.example.pixabayclean.ui.image_details.ImageDetailsFragment"
+        android:label="Image Details"
+        tools:layout="@layout/image_details_fragment" >
+        <action
+            android:id="@+id/action_imageDetailsFragment_to_searchImageFragment"
+            app:destination="@id/searchImageFragment" />
+        <argument
+            android:name="image"
+            app:argType="com.example.pixabayclean.domain.model.Image" />
+    </fragment>
+</navigation>
